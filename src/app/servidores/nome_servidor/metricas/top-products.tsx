@@ -18,7 +18,7 @@ export default function TopProducts() {
       <CardContent>
         <Table>
           <TableHeader>
-            <TableRow className="bg-blue-900 text-sm font-medium tracking-wide">
+            <TableRow className="bg-blue-900 tracking-wide text-center">
               <TableHead>Nome do Produto</TableHead>
               <TableHead>Vendas</TableHead>
               <TableHead>Receita</TableHead>

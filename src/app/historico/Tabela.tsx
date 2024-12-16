@@ -1,5 +1,6 @@
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 
 // Definição do tipo para uma venda
 interface Venda {
@@ -20,55 +21,55 @@ interface TabelaProps {
 
 const Tabela: React.FC<TabelaProps> = ({ vendas }) => {
   return (
-    <div className="p-6 max-w-7xl mx-auto w-full">
-      <table className="w-full border-collapse bg-blue-800 text-white text-sm rounded-lg overflow-hidden">
-        <thead>
-          <tr className="bg-blue-900 text-sm tracking-wide">
-            <th className="py-4 px-2 font-medium">ID</th>
-            <th className="py-4 px-2 font-medium">Comprador</th>
-            <th className="py-4 px-2 font-medium">Servidor</th>
-            <th className="py-4 px-2 font-medium">Produto</th>
-            <th className="py-4 px-2 font-medium">Quantidade</th>
-            <th className="py-4 px-2 font-medium">Valor</th>
-            <th className="py-4 px-2 font-medium">Data</th>
-          </tr>
-        </thead>
-        <tbody>
+    <div className="w-full overflow-auto">
+      <Table>
+        <TableHeader>
+          <TableRow>
+            <TableHead className="w-[100px]">ID</TableHead>
+            <TableHead>Comprador</TableHead>
+            <TableHead>Servidor</TableHead>
+            <TableHead>Produto</TableHead>
+            <TableHead>Quantidade</TableHead>
+            <TableHead>Valor</TableHead>
+            <TableHead>Data</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
           {vendas.length > 0 ? (
             vendas.map((venda) => (
-              <tr
-                key={venda.id}
-                className="border-b text-xs border-gray-200 border-opacity-10 hover:bg-blue-900 transition-all"
-              >
-                <td className="py-3 px-2 text-center">{venda.id}</td>
-                <td className="py-3 px-2 flex items-center gap-2">
-                  <Image
-                    src={venda.avatar}
-                    alt={venda.comprador}
-                    width={28}
-                    height={28}
-                    className="rounded-full"
-                  />
-                  <span className="text-center truncate font-normal">{venda.comprador}</span>
-                </td>
-                <td className="py-3 px-2 text-center truncate font-normal">{venda.servidor}</td>
-                <td className="py-3 px-2 text-center truncate font-normal">{venda.produto}</td>
-                <td className="py-3 px-2 text-center font-normal">{venda.quantidade}</td>
-                <td className="py-3 px-2 text-center font-normal">{venda.valor}</td>
-                <td className="py-3 px-2 truncate font-normal text-center">{venda.data}</td>
-              </tr>
+              <TableRow key={venda.id}>
+                <TableCell className="font-medium">{venda.id}</TableCell>
+                <TableCell>
+                  <div className="flex items-center gap-2">
+                    <Image
+                      src={venda.avatar}
+                      alt={venda.comprador}
+                      width={28}
+                      height={28}
+                      className="rounded-full"
+                    />
+                    <span className="truncate">{venda.comprador}</span>
+                  </div>
+                </TableCell>
+                <TableCell>{venda.servidor}</TableCell>
+                <TableCell>{venda.produto}</TableCell>
+                <TableCell>{venda.quantidade}</TableCell>
+                <TableCell>{venda.valor}</TableCell>
+                <TableCell>{venda.data}</TableCell>
+              </TableRow>
             ))
           ) : (
-            <tr>
-              <td colSpan={7} className="text-center py-6">
+            <TableRow>
+              <TableCell colSpan={7} className="text-center">
                 Nenhum resultado encontrado.
-              </td>
-            </tr>
+              </TableCell>
+            </TableRow>
           )}
-        </tbody>
-      </table>
+        </TableBody>
+      </Table>
     </div>
   );
 };
 
 export default Tabela;
+

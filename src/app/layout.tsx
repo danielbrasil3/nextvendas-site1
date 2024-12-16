@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
     
     <html lang="pt-br">
       <body className="bg-blue-950 text-white">
-        <div className="flex h-screen p-4 font-whitney font-semibold">
+        <div className="grid grid-cols-1 lg:grid-cols-[auto,1fr] lg:h-screen p-4 font-whitney font-semibold">
           <Sidebar/>
           {children}
         </div>

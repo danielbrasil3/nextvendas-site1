@@ -19,19 +19,19 @@ const CardConfigCanal = () => {
   const [selected, setSelected] = useState(people[1])
 
   return (
-    <Card className='mt-10'>
-      <div className="relative -ml-4 mr-10 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600"></div>
+    <Card className='w-full mt-6 lg:mt-10'>
+      <div className="relative mx-4 md:-ml-3 md:mr-20 -mt-6 h-24 md:h-32 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600"></div>
       <CardHeader>
-        <CardTitle>Notificação de Vendas</CardTitle>
-        <CardDescription>Todas as notificações de vendas realizadas serão enviadas para este chat.</CardDescription>
+        <CardTitle className="text-lg lg:text-xl">Notificação de Vendas</CardTitle>
+        <CardDescription className="text-sm lg:text-base">Todas as notificações de vendas realizadas serão enviadas para este chat.</CardDescription>
       </CardHeader>
       <CardContent>
       <Listbox value={selected} onChange={setSelected}>
-          <Label className="block text-sm font-medium text-white">Chat definido:</Label>
+          <Label className="block text-sm/3 lg:text-sm font-medium text-white text-left">Chat definido:</Label>
           <div className='relative mt-2'>
             <ListboxButton
               className={clsx(
-                'relative block w-full rounded-lg bg-blue-900 py-1.5 pr-8 pl-3 text-left text-sm/6 text-white',
+                'relative block w-full rounded-lg bg-blue-900 py-1 pr-8 pl-3 text-left text-sm/6 text-white',
                 'focus:outline-none data-[focus]:outline-2 data-[focus]:-outline-offset-2 data-[focus]:outline-white/10'
                 )}
                 >
@@ -68,3 +68,4 @@ const CardConfigCanal = () => {
 }
 
 export default CardConfigCanal;
+

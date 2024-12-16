@@ -14,11 +14,11 @@ export default function MetricsOverview() {
       {metrics.map((metric, index) => (
         <Card key={index}>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">{metric.title}</CardTitle>
+            <CardTitle className="text-sm text-gray-400">{metric.title}</CardTitle>
             <metric.icon className={`h-4 w-4 ${metric.color}`} />
           </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">{metric.value}</div>
+          <CardContent className="pt-0">
+            <div className="text-lg font-bold truncate">{metric.value}</div>
           </CardContent>
         </Card>
       ))}

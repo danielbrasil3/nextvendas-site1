@@ -17,9 +17,9 @@ export default function SalesChart() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Vendas Mensais</CardTitle>
+        <CardTitle className="text-lg">Vendas Mensais</CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="pl-0 pb-2">
         <ChartContainer
           config={{
             sales: {
@@ -29,14 +29,12 @@ export default function SalesChart() {
           }}
           className=""
         >
-          <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data}>
               <XAxis dataKey="month" />
               <YAxis />
               <ChartTooltip content={<ChartTooltipContent />} />
               <Line type="monotone" dataKey="sales" stroke="var(--color-sales)" strokeWidth={2} />
             </LineChart>
-          </ResponsiveContainer>
         </ChartContainer>
       </CardContent>
     </Card>

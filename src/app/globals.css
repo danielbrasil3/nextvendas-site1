@@ -82,7 +82,7 @@ html, body {
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --input: 217.9 10.6% 64.9% / .4;
     --ring: 222.2 84% 4.9%;
     --chart-1: 221.2 83.2% 53.3%;
     --chart-2: 212 95% 68%;
@@ -143,8 +143,16 @@ html, body {
   }
   body {
     @apply bg-background text-foreground;
-   
   }
+  input[type="number"].appearance-none::-webkit-inner-spin-button,
+    input[type="number"].appearance-none::-webkit-outer-spin-button {
+        -webkit-appearance: none !important;
+        margin: 0 !important;
+    }
+
+    input[type="number"].appearance-none {
+        -moz-appearance: textfield !important;
+    }
 }
 
 

@@ -225,7 +225,7 @@ const App: React.FC = () => {
   const totalPages = Math.ceil(sortedVendas.length / itemsPerPage);
 
   return (
-    <main className="flex-1 pl-6 pt-4 overflow-y-auto">
+    <main className="w-full p-4 md:p-6 overflow-y-scroll  ">
       <div className="p-6 bg-blue-800 w-full rounded-lg">
         {/* Titulo */}
         <h4 className="text-3xl font-semibold text-center text-white mb-10">

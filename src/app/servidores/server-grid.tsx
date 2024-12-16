@@ -2,8 +2,8 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { LogIn } from 'lucide-react'
-import icon from './servidor-icon.png'
-import { Button } from './ui/button'
+import icon from '../servidor-icon.png'
+import { Button } from '../../../components/ui/button'
 
 const profiles = [
   { id: 1, src: './servidor-icon.png', alt: 'Server 1', name: 'Production Server', sales: 150, status: 'Online' },
@@ -20,7 +20,7 @@ const ServerGrid = () => {
       {profiles.map((profile) => (
         <div
           key={profile.id}
-          className="bg-blue-900 rounded-lg overflow-hidden shadow-md transition-transform transform hover:scale-105"
+          className="bg-blue-900 rounded-xl overflow-hidden shadow-md transition-transform transform hover:scale-105"
         >
           <div className="p-4">
             <div className="flex items-center justify-between mb-2">

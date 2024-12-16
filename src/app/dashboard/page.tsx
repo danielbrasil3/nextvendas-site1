@@ -1,44 +1,38 @@
 import React from "react";
 import Image from 'next/image'
-import Link from 'next/link'
 import icon from './servidor-icon.png'
-import Chart from '@/components/chart'
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { ArrowUp, DollarSign, Users, CreditCard } from 'lucide-react'
+import SalesChart from './sales-chart'
+import MetricsOverview from './metrics-overview'
+import CustomerChart from "./customer-chart";
 
 
 
 export default function Home() {
   return (
-      <main className="flex-1 pl-6 pt-4 overflow-y-scroll">
-        <header className="topo flex items-center p-0 mb-4">
-          <Image className="rounded-full h-24 w-24" src={icon} alt='Icon'></Image>
-          
-          <h1 className="ml-4 font-semibold text-3xl">Olá, Not-Daniel</h1>
-        </header>
+      <main className="w-full p-4 md:p-6 overflow-y-scroll">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 md:mb-8 gap-4">
+          <div className="flex items-center space-x-4">
+            <Image
+              src={icon}
+              alt="Dashboard logo"
+              width={60}
+              height={60}
+              className="rounded-full w-12 h-12 md:w-16 md:h-16 lg:w-[75px] lg:h-[75px]"
+            />
+            <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight">Olá, Not-Daniel</h1>
+          </div>
+        </div>
 
-        <section className="cards grid grid-cols-1 xl:grid-cols-3 gap-4 mr-4">
-          <div className="card p-4 bg-blue-800 rounded-md space-y-1">
-            <h5 className="font-medium text-2xl">Vendas Hoje</h5>
-            <h3 className="font-semibold text-2xl">$53,897</h3>
-            <p className="font-normal text-base"><span className='text-green-400'>+3.48% </span>Desde ontem</p>
-          </div>
-          <div className="card p-4 bg-blue-800 rounded-md space-y-1">
-            <h5 className="font-medium text-2xl">Quantidade de Clientes</h5>
-            <h3 className="font-semibold text-2xl">1000</h3>
-            <p className="font-normal text-base"><span className='text-green-400'>+3.48% </span>Desde o último mês</p>
-          </div>
-          <div className="card p-4 bg-blue-800 rounded-md space-y-1">
-            <h5 className="font-medium text-2xl">Total vendido</h5>
-            <h3 className="font-semibold text-2xl">$53,897</h3>
-            <p className="font-normal text-base"><span className='text-green-400'>+3.48% </span>Desde o último mês</p>
-          </div>
-          <div className="geral-vendas card p-4 bg-blue-800 rounded-md col-span-2 space-y-1">
-            <h5 className="font-medium text-2xl">Visão geral de Vendas</h5>
-            <p className="font-normal text-base"><span className='text-green-400'>(+5) a mais</span> de 2023</p>
-            <div className="grafico">
-              <Chart/>
-            </div>
-          </div>
-        </section>
+        
+        <div className="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-3">
+          <MetricsOverview />
+        </div>
+        <div className="grid gap-4 md:gap-6 mt-6 grid-cols-1 lg:grid-cols-2">
+          <SalesChart />
+          <CustomerChart />
+        </div>
       </main>
   );
 }

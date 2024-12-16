@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from "react";
 import { Search } from 'lucide-react'
-import ServerGrid from '@/components/server-grid'
+import ServerGrid from './server-grid'
 import { Input } from "@/components/ui/input"
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
@@ -10,10 +10,10 @@ import { Button } from '@/components/ui/button';
 
 export default function servidores() {
   return (
-      <main className="flex-1 pl-6 pt-4 overflow-y-auto">
+    <main className="w-full p-4 md:p-6 overflow-y-scroll">
         <header className="mb-6">   
-          <h1 className="text-3xl font-bold ">Selecionar Servidor</h1>
-          <p className="mt-2 text-gray-300">Escolha um servidor para gerenciar e ver detalhes.</p>
+          <h1 className="text-3xl font-bold ">Selecionar Loja</h1>
+          <p className="mt-2 text-gray-300">Escolha uma loja para gerenciar e ver detalhes.</p>
         </header>
 
         <div className="mb-6">
@@ -26,15 +26,13 @@ export default function servidores() {
           </div>
         </div>
 
-        <div className="bg-blue-800 rounded-lg shadow-md p-6">
-          <ServerGrid />
-        </div>
+        <ServerGrid />
 
         <div className="mt-6 text-center">
           <Link href="/add-server">
             <Button>Adicionar servidor</Button>
           </Link>
         </div>
-      </main>
+    </main>
   );
 }

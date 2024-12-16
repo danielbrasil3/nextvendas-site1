@@ -35,25 +35,25 @@ const UltimasVendas = () => {
         },
       ];
     return (
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center w-full">
             <div className="relative flex w-full flex-col rounded-lg bg-blue-800">
-                <div className="flex h-fit w-full items-center justify-between px-6 pt-4">
-                    <h4 className="text-xl font-semibold">
+                <div className="flex h-fit w-full items-center justify-between p-4 pb-3 lg:px-6">
+                    <h4 className="text-lg lg:text-xl font-semibold">
                         Últimas Vendas
                     </h4>
                     <Link href={{
                             pathname: '/historico',
                             query: { search: 'servidor-a',  filter: 'mais-recente'},
                         }}>
-                        <Button >
+                        <Button className="text-xs">
                             Mostrar todas
                         </Button>
                     </Link>
                     </div>
-                    <div className="w-full overflow-x-scroll p-4 md:overflow-x-hidden text-center">
+                    <div className="w-full overflow-x-auto p-2 md:p-4">
                         <Table>
                             <TableHeader>
-                                <TableRow className="bg-blue-900 text-sm tracking-wide">
+                                <TableRow className="bg-blue-900 tracking-wide">
                                     <TableHead>Produto</TableHead>
                                     <TableHead>Quantidade</TableHead>
                                     <TableHead>Valor</TableHead>
@@ -62,12 +62,9 @@ const UltimasVendas = () => {
                             <TableBody>
                                 {data.map((row, index) => (
                                 <TableRow key={index}>
-                                    <TableCell className="text-xs  text-center truncate max-w-[100px]">{row.product}
-                                    </TableCell>
-                                    <TableCell className="text-xs  truncate">{row.qtd}
-                                    </TableCell>
-                                    <TableCell className="text-xs  truncate max-w-[100px]">{row.value}
-                                    </TableCell>
+                                    <TableCell className="text-xs md:text-sm text-center truncate max-w-[100px]">{row.product}</TableCell>
+                                    <TableCell className="text-xs md:text-sm truncate">{row.qtd}</TableCell>
+                                    <TableCell className="text-xs md:text-sm truncate max-w-[100px]">{row.value}</TableCell>
                                 </TableRow>
                                 ))}
                             </TableBody>
@@ -79,3 +76,4 @@ const UltimasVendas = () => {
 }
 
 export default UltimasVendas;
+

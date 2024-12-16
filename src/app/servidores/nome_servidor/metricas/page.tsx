@@ -12,10 +12,10 @@ export const metadata: Metadata = {
 
 export default function MetricsPage() {
   return (
-    <main className="flex-1 overflow-y-auto p-6">
-      <h1 className="text-3xl font-semibold">Dashbord da Loja: <span className='font-light'>848678305745862676</span></h1>
+    <main className="w-full p-4 md:p-6 overflow-y-scroll">
+      <h1 className="text-xl md:text-3xl font-semibold text-center md:text-left">Metricas da Loja: <span className='font-light'>848678305745862676</span></h1>
       <Button_back/>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-6 grid-cols-2 lg:grid-cols-4">
         <MetricsOverview />
       </div>
       <div className="grid gap-6 mt-6 md:grid-cols-2">

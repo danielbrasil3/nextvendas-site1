@@ -22,11 +22,11 @@ const ReviewsPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div className='flex w-full items-center justify-between px-4 pb-4'>
-        <h2 className="text-xl font-semibold text-center">Últimas Avaliações</h2>
+    <div className="flex flex-col justify-center items-center w-full">
+      <div className='flex w-full items-center justify-between px-4 pb-3'>
+        <h2 className="text-lg md:text-xl font-semibold">Últimas Avaliações</h2>
         <Link href={'nome_servidor/feedbacks'}>
-          <Button>
+          <Button className="text-xs">
             Ver todas
           </Button>
         </Link>
@@ -38,19 +38,19 @@ const ReviewsPage = () => {
             {reviews.map((review) => (
               <li
                 key={review.id}
-                className="bg-blue-800 p-4 rounded-lg shadow-md"
+                className="bg-blue-800 p-3 md:p-4 rounded-lg shadow-md"
               >
                 <div className="flex justify-between items-center">
                   <div className='flex items-center'>
-                    <div className="text-yellow-400 font-medium text-xl">
+                    <div className="text-yellow-400 font-medium text-lg md:text-xl">
                       {'★'.repeat(review.rating)}
                       {'☆'.repeat(5 - review.rating)}
                     </div>
-                    <span className="ml-2 font-medium">({review.rating}/5)</span>
+                    <span className="ml-2 font-medium text-sm md:text-base">({review.rating}/5)</span>
                   </div>
-                  <span className="text-sm font-light">{review.date}</span>
+                  <span className="text-xs md:text-sm font-light">{review.date}</span>
                 </div>
-                <p className="mt-2 font-normal text-sm">{review.comment}</p>
+                <p className="mt-2 font-normal text-xs md:text-sm">{review.comment}</p>
               </li>
             ))}
           </ul>
@@ -60,3 +60,4 @@ const ReviewsPage = () => {
 };
 
 export default ReviewsPage;
+

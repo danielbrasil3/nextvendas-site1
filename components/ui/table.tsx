@@ -73,7 +73,7 @@ const TableHead = React.forwardRef<
   <th
     ref={ref}
     className={cn(
-      "py-3 px-2 font-medium align-middle justify-center",
+      "py-3 px-2 font-semibold text-xs md:text-sm align-middle justify-center",
       className
     )}
     {...props}
@@ -88,7 +88,7 @@ const TableCell = React.forwardRef<
   <td
     ref={ref}
     className={cn(
-      "py-3 px-2 text-center items-center justify-center truncate font-normal",
+      "py-3 px-2 text-center items-center justify-center truncate font-normal text-xs md:text-sm",
       className
     )}
     {...props}

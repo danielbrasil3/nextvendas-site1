@@ -5,15 +5,15 @@ import React from 'react';
 
 const CardCupom = () => {
   return (
-    <Card className='mt-10'>
-      <div className="relative ml-4 mr-14 -mt-6 h-40 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600"></div>
+    <Card className='w-full mt-6 lg:mt-10'>
+      <div className="relative mx-4 md:-mr-3 md:ml-20 -mt-6 h-24 md:h-32 overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40 bg-gradient-to-r from-blue-500 to-blue-600"></div>
       <CardHeader>
-        <CardTitle>Cupom de Desconto</CardTitle>
-        <CardDescription>Crie cupons exclusivos para seus clientes ou apoiadores e ofereça descontos especiais como forma de agradecimento!</CardDescription>
+        <CardTitle className="text-lg lg:text-xl">Cupom de Desconto</CardTitle>
+        <CardDescription className="text-sm lg:text-base">Crie cupons exclusivos para seus clientes ou apoiadores e ofereça descontos especiais como forma de agradecimento!</CardDescription>
       </CardHeader>
       <CardContent>
         <Link href={'/servidores/nome_servidor/manage_cupons'}>
-          <Button data-ripple-light="true">
+          <Button data-ripple-light="true" className="w-full sm:w-auto">
             Gerenciar Cupons
           </Button>
         </Link>
@@ -23,3 +23,4 @@ const CardCupom = () => {
 }
 
 export default CardCupom;
+
