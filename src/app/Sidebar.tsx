@@ -1,11 +1,13 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import { cn } from "@/lib/utils"
 import { Home, BarChart3, History, Palette, CreditCard, UserCircle } from 'lucide-react'
 import clsx from 'clsx';
+
 
 export default function Sidebar() {
     const pathname = usePathname();
@@ -46,8 +48,15 @@ export default function Sidebar() {
             </nav>
             <aside className="bg-gradient-to-t from-blue-900 to-blue-800 h-full w-56 mr-4 rounded-md hidden lg:block">
                 <nav className="sidebar" id="sidebarMenu">
-                    <div className="p-3 text-center text-2xl font-semibold text-white">
-                        <h1>Zephyros</h1>
+                    <div className="flex pt-4 pb-0 space-x-3 rtl:space-x-reverse justify-center items-center text-2xl font-semibold text-white">
+                        <Image
+                            src='/zephyros-logo.png'
+                            alt="Dashboard logo"
+                            width={105}
+                            height={105}
+                            className="h-12 w-12 transition-transform duration-300 hover:scale-105"
+                        />
+                        <span>Zephyros</span>
                     </div>
                     <ul className="nav flex-col md:m-3 font-semibold text-xs">
                         <li className="nav-item mb-1">

@@ -8,7 +8,6 @@ import MetricsOverview from './metrics-overview'
 import CustomerChart from "./customer-chart";
 
 
-
 export default function Home() {
   return (
       <main className="w-full p-4 md:p-6 overflow-y-scroll">
@@ -21,7 +20,7 @@ export default function Home() {
               height={60}
               className="rounded-full w-12 h-12 md:w-16 md:h-16 lg:w-[75px] lg:h-[75px]"
             />
-            <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight">Olá, Not-Daniel</h1>
+            <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight">Bem-vindo Not-Daniel</h1>
           </div>
         </div>
 
